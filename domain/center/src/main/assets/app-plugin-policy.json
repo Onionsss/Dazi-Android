@@ -1,0 +1,34 @@
+{
+  "name": "AppPlugin",
+  "send": {
+    "commands": [],
+    "queries": [
+      {
+        "messageName": "GetLoginName",
+        "pluginName": "LoginPlugin"
+      }
+    ]
+  },
+  "receive": {
+    "queries": [
+      {
+        "messageName": "GetAppName",
+        "pluginName": "AppPlugin"
+      },
+      {
+        "messageName": "GetLoginStatus",
+        "pluginName": "AppPlugin"
+      }
+    ]
+  },
+  "publish": {
+    "eventStreams": [
+      {
+        "messageName": "GetUserInfo",
+        "pluginName": "AppPlugin"
+      }
+    ]
+  },
+
+  "dependencies": []
+}

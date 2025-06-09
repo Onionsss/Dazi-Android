@@ -1,0 +1,25 @@
+{
+  "name": "LoginPlugin",
+  "send": {
+    "commands": [],
+    "queries": [
+      {
+        "messageName": "GetAppName",
+        "pluginName": "AppPlugin"
+      },
+      {
+        "messageName": "GetLoginStatus",
+        "pluginName": "AppPlugin"
+      }
+    ]
+  },
+  "receive": {
+    "queries": [
+      {
+        "messageName": "GetLoginName",
+        "pluginName": "LoginPlugin"
+      }
+    ]
+  },
+  "dependencies": []
+}

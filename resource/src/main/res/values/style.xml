@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/transparent</item>
+        <item name="colorPrimaryDark">@color/transparent</item>
+<!--        <item name="android:windowFullscreen">true</item>-->
+        <item name="colorAccent">@color/transparent</item>
+<!--        <item name="android:statusBarColor">@color/transparent</item>-->
+        <!--        <item name="android:navigationBarColor">@color/white</item>-->
+        <!--window占满全屏-->
+        <item name="android:windowFullscreen">true</item>
+        <!--window设置背景-->
+        <item name="android:windowBackground">@color/transparent</item>
+    </style>
+</resources>

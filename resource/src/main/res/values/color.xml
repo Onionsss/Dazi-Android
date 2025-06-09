@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="transparent">#00000000</color>
+    <color name="resource_text_color_333">#333333</color>
+    <color name="resource_text_color_666">#666666</color>
+    <color name="resource_text_color_111">#111111</color>
+    <color name="resource_text_color_999">#999999</color>
+    <color name="resource_button_normal_background">#f7f7f7</color>
+    <color name="resource_line">#e3e3e3</color>
+    <color name="resource_white">#ffffff</color>
+    <color name="resource_black">#000000</color>
+    <color name="resource_button_primary_color">#409EFF</color>
+    <color name="resource_button_normal_color">#55409EFF</color>
+    <color name="resource_hint_text_color">#DCDFE6</color>
+</resources>

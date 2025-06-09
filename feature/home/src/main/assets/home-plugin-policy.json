@@ -1,0 +1,23 @@
+{
+  "name": "HomePlugin",
+  "send": {
+    "commands": [],
+    "queries": [
+
+    ]
+  },
+  "receive": {
+    "queries": [
+
+    ]
+  },
+  "subscribeOnDemand": {
+    "eventStreams": [
+      {
+        "messageName": "GetUserInfo",
+        "pluginName": "AppPlugin"
+      }
+    ]
+  },
+  "dependencies": []
+}
