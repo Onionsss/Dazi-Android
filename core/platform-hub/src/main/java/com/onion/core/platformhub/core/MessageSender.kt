@@ -28,4 +28,9 @@ interface MessageSender {
         message: Message,
         sender: Plugin
     ): Plugin
+
+    fun getReceiverForNavigationList(
+        message: Message,
+        sender: Plugin
+    ): ArrayList<Plugin>
 }

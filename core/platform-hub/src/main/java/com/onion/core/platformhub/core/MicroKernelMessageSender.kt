@@ -133,6 +133,28 @@ internal class MicroKernelMessageSender(private val logger: Logger) : MessageSen
             throw ex
         }
     }
+
+    override fun getReceiverForNavigationList(message: Message, sender: Plugin): ArrayList<Plugin> {
+        throwIfUnInitialised(message, sender)
+        return try {
+            val receiver = getReceiver(navigation = message, sender = sender)
+            logger.log(
+                LogInfo.MessageInfo(
+                    senderPlugin = sender.name(),
+                    receiverPlugin = receiver.name(),
+                    messageType = MessageType.NavigationQuery,
+                    messageName = message.messageName,
+                    payload = message.payload,
+                    responsePayload = null
+                )
+            )
+            arrayListOf(receiver)
+        } catch (ex: RuntimeException) {
+            logError(sender, message, MessageType.NavigationQuery, ex.localizedMessage.orEmpty())
+            throw ex
+        }
+    }
+
     private fun throwIfUnInitialised(message: Message, sender: Plugin) {
         if (!isReady) {
             val errorMessage = "Attempting to send a message but microkernel is not initialised."

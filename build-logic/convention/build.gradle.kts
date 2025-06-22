@@ -74,5 +74,13 @@ gradlePlugin {
             id = "dazi.android.coil"
             implementationClass = "AndroidCoilConventionPlugin"
         }
+        register("androidComposeDestinations") {
+            id = "dazi.android.compose.destinations"
+            implementationClass = "AndroidComposeDestinationsPlugin"
+        }
+        register("androidDataStore") {
+            id = "dazi.android.datastore"
+            implementationClass = "AndroidDataStorePlugin"
+        }
     }
 }

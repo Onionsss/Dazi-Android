@@ -45,4 +45,14 @@ sealed class BaseMessage(
         payload = payload,
         pluginName = pluginName
     )
+
+    data class NavigationQuery(
+        override val messageName: String,
+        override val pluginName: String,
+        override val payload: JSONObject? = null
+    ): BaseMessage(
+        messageName = messageName,
+        payload = payload,
+        pluginName = pluginName
+    )
 }

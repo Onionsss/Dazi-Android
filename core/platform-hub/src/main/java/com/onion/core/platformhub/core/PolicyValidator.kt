@@ -24,7 +24,7 @@ class PolicyValidator {
     private val directMessageSenders = mutableMapOf<String, MutableList<Plugin>>()
     private val eventStreamSubscribers = mutableMapOf<String, MutableList<Plugin>>()
     private val eventStreamPublishers = mutableMapOf<String, Plugin>()
-
+    
     fun validate(plugins: List<Plugin>) {
         plugins.forEach { plugin ->
             registerMessages(plugin)
@@ -143,12 +143,13 @@ class PolicyValidator {
             val isUnused = hasDirectMessageReceiver.not() && hasDirectMessageSender.not() &&
                     hasEventStreamSubscriber.not() && hasEventStreamPublisher.not()
             if (isUnused) {
-                throw UnusedPluginException(
-                    "❌ \"${plugin.name()}\" doesn't seem to be used. All of its outgoing messages " +
-                            "doesn't have any receivers or subscribers and it doesn't receive or " +
-                            "subscribe to any incoming message from other plugins. Please review " +
-                            "\"${plugin.name()}\" policy to make sure the messages are properly configured"
-                )
+                //todo hub
+//                throw UnusedPluginException(
+//                    "❌ \"${plugin.name()}\" doesn't seem to be used. All of its outgoing messages " +
+//                            "doesn't have any receivers or subscribers and it doesn't receive or " +
+//                            "subscribe to any incoming message from other plugins. Please review " +
+//                            "\"${plugin.name()}\" policy to make sure the messages are properly configured"
+//                )
             }
         }
     }

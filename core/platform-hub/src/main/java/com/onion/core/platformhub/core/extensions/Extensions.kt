@@ -24,6 +24,7 @@ internal fun Message.toPoliceMessage() = when(this){
     is BaseMessage.EventStream -> PolicyMessage.EventStreamPolicy(messageName,pluginName)
     is BaseMessage.Query -> PolicyMessage.QueryPolicy(messageName,pluginName)
     is BaseMessage.Command -> PolicyMessage.CommandPolicy(messageName,pluginName)
+    is BaseMessage.NavigationQuery -> PolicyMessage.NavigationQueryPolicy(messageName,pluginName)
     else -> PolicyMessage.NavigationQueryPolicy(messageName,pluginName)
 }
 

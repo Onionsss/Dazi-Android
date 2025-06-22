@@ -30,6 +30,9 @@ class AndroidHiltConventionPlugin : Plugin<Project> {
             dependencies {
                 "implementation"(libs.findLibrary("hilt.android").get())
                 "ksp"(libs.findLibrary("hilt.compiler").get())
+
+//                "implementation"(libs.findLibrary("squareup.inject.assisted").get())
+//                "ksp"(libs.findLibrary("squareup.inject.ksp").get())
             }
 
         }
