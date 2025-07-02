@@ -25,6 +25,7 @@ class AndroidCoilConventionPlugin : Plugin<Project> {
             dependencies {
                 "implementation"(libs.findLibrary("coil.kt.compose").get())
                 "implementation"(libs.findLibrary("coil.kt").get())
+                "implementation"(libs.findLibrary("coil.kt.svg").get())
             }
         }
     }

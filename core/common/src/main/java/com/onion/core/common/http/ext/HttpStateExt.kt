@@ -3,6 +3,7 @@ package com.onion.core.common.http.ext
 import com.onion.core.common.exceptions.AppException
 import com.onion.core.common.http.BaseResult
 import com.onion.core.common.http.HttpState
+import com.onion.core.common.http.HttpWrapper
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import kotlin.coroutines.CoroutineContext
@@ -22,9 +23,17 @@ fun HttpState<*>.hasData(): Boolean{
     return isSuccess() && (this as HttpState.Success).data != null
 }
 
-fun <T> HttpState<T>.getSuccessData(failed: (() -> Unit)? = null): T?{
+fun <T> HttpState<T>.getSuccessData(failed: ((HttpWrapper<T>?) -> Unit)? = null): T?{
     if(!hasData()){
-        failed?.invoke()
+        val wrapper = when{
+            this is HttpState.Failed -> {
+                this.data
+            }
+            else -> {
+                null
+            }
+        }
+        failed?.invoke(wrapper)
     }else{
         val success = this as HttpState.Success<T>
         return success.data

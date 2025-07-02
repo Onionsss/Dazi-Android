@@ -11,9 +11,9 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class BaseResult<T>(
-    val code: Int,
-    val info: String,
-    val data: T?,
+    val code: Int = 200,
+    val info: String? = null,
+    val data: T? = null,
     var jsonObj: String? = null
 ): HttpWrapper<T> {
 
@@ -22,7 +22,7 @@ data class BaseResult<T>(
     }
 
     override fun getOriginMsg(): String {
-        return info
+        return info ?: ""
     }
 
     override fun getOriginData(): T? {
