@@ -1,5 +1,6 @@
 package com.onion.core.common.http.ext
 
+import android.util.Log
 import com.onion.core.common.exceptions.AppException
 import com.onion.core.common.http.BaseResult
 import com.onion.core.common.http.HttpState
@@ -56,6 +57,7 @@ suspend fun <T> syncCallHttpState(
             HttpState.onFailed(result)
         }
     } catch (e: Exception) {
+        Log.d("okhttp", "syncCallHttpState: ${e.message}")
         HttpState.onError(AppException(e))
     }
 }
