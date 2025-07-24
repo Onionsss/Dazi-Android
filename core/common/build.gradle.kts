@@ -6,7 +6,7 @@ plugins {
     alias(libs.plugins.kotlinAndroid)
     alias(libs.plugins.dazi.android.hilt)
     alias(libs.plugins.dazi.android.ksj)
-    id("maven-publish")
+//    id("maven-publish")
 }
 
 android {
