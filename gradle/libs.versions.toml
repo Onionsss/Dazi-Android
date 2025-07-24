@@ -232,4 +232,5 @@ nowinandroid-android-room = { id = "nowinandroid.android.room", version = "unspe
 nowinandroid-android-test = { id = "nowinandroid.android.test", version = "unspecified" }
 nowinandroid-jvm-library = { id = "nowinandroid.jvm.library", version = "unspecified" }
 kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin202" }
+mavenPublish = { id = "com.vanniktech.maven.publish", version = "0.28.0" }
 

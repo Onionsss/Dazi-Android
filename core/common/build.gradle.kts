@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.kotlinAndroid)
     alias(libs.plugins.dazi.android.hilt)
     alias(libs.plugins.dazi.android.ksj)
+    id("maven-publish")
 }
 
 android {
@@ -51,4 +52,22 @@ dependencies {
     implementation(libs.okhttp.core)
     implementation(libs.retrofit.core)
 
+}
+
+group = "com.onion.core"
+version = "1.0.0"
+
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("release") {
+                // Applies the component for the release build variant.\
+                // from(components["release"])
+                // You can then customize attributes of the publication as shown below.
+                groupId = (group.toString())
+                artifactId = "common"
+                version = version
+            }
+        }
+    }
 }

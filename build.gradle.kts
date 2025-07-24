@@ -24,4 +24,6 @@ plugins {
     alias(libs.plugins.room) apply false
 
     alias(libs.plugins.compose.compiler) apply false
+    alias(libs.plugins.mavenPublish) apply false
+
 }
