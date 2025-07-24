@@ -1,6 +1,10 @@
 plugins {
     id("com.android.application")
-    id("org.jetbrains.kotlin.android")
+    alias(libs.plugins.kotlinAndroid)
+    alias(libs.plugins.dazi.android.hilt)
+    alias(libs.plugins.dazi.android.compose)
+    alias(libs.plugins.dazi.android.network)
+    alias(libs.plugins.compose.compiler)
 }
 
 android {
@@ -10,7 +14,6 @@ android {
     defaultConfig {
         minSdk = libs.versions.androidMinSdk.get().toInt()
         applicationId = "com.onion.login.sample"
-        minSdk = libs.versions.androidTargetSdk.get().toInt()
         versionCode = 1
         versionName = "1.0"
 
@@ -52,8 +55,8 @@ android {
 
 dependencies {
 
-    implementation(project(":user:login-protocol"))
-    implementation(project(":user:login"))
+//    implementation(project(":user:login-protocol"))
+//    implementation(project(":user:login"))
     implementation(project(":router"))
 
     implementation(libs.androidx.hilt.navigation.compose)
