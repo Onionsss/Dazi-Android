@@ -20,6 +20,12 @@ fun HttpState<*>.isSuccess(): Boolean{
     return this is HttpState.Success
 }
 
+fun HttpState<*>.success(callback: () -> Unit){
+    if(isSuccess()){
+        callback()
+    }
+}
+
 fun HttpState<*>.hasData(): Boolean{
     return isSuccess() && (this as HttpState.Success).data != null
 }
