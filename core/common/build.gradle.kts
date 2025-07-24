@@ -56,20 +56,20 @@ dependencies {
 
 }
 
-group = "com.onion.core"
-version = "1.0.0"
-
-afterEvaluate {
-    publishing {
-        publications {
-            create<MavenPublication>("release") {
-                // Applies the component for the release build variant.\
-                // from(components["release"])
-                // You can then customize attributes of the publication as shown below.
-                groupId = (group.toString())
-                artifactId = "common"
-                version = version
-            }
-        }
-    }
-}
+//group = "com.onion.core"
+//version = "1.0.0"
+//
+//afterEvaluate {
+//    publishing {
+//        publications {
+//            create<MavenPublication>("release") {
+//                // Applies the component for the release build variant.\
+//                // from(components["release"])
+//                // You can then customize attributes of the publication as shown below.
+//                groupId = (group.toString())
+//                artifactId = "common"
+//                version = version
+//            }
+//        }
+//    }
+//}
